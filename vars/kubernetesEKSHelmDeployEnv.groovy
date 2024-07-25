@@ -22,7 +22,7 @@ def call(String dockerRegistry, String dockerImageTag, String helmChartName, Str
             aws configure set aws_access_key_id ${awsAccessKey}
             aws configure set aws_secret_access_key ${awsSecretKey}
             aws configure set region ${awsRegion}
-            aws eks --region ${awsRegion} update-kubeconfig --name ${eksClusterName}
+            # aws eks --region ${awsRegion} update-kubeconfig --name ${eksClusterName} # commanet if cluster is self-managed
             
             if ! command -v helm > /dev/null; then
                 echo "Helm not found. Installing Helm..."
